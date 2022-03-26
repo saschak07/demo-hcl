@@ -1,4 +1,4 @@
-package start.myprojectbe.controller;
+package start.myprojectbe.testController;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
