@@ -19,24 +19,18 @@ import lombok.Data;
 public class Portfolio implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false, unique = true)
-	private long id;
+	@Column(name = "portfolioId", nullable = false, unique = true)
+	private long portfolioId;
 
-	@Column(name = "employeeId", nullable = false, unique = true)
-	private String employeeId;
+	@Column(name = "portfolioName", nullable = false)
+	private String portfolioName;
 
-	@Column(name = "employeeName", nullable = false)
-	private String employeeName;
+	@Column(name = "createTimeStamp")
+	private LocalDate createTimeStamp;
 
-	@Column(name = "createdDate")
-	private LocalDate createdDate;
+	@Column(name = "modifyTimeStamp")
+	private LocalDate modifyTimeStamp;
 
-	@Column(name = "updateDate")
-	private LocalDate updateDate;
-
-	@Column(name = "createdByUser")
-	private String createdByUser;
-
-	@Column(name = "updateByUser")
-	private String updateByUser;
+	@Column(name = "runningBalance")
+	private int runningBalance = 10000;
 }
