@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication(exclude = KafkaAutoConfiguration.class)
+@SpringBootApplication(exclude = {KafkaAutoConfiguration.class})
 @ComponentScan("start")
 public class MyProjectBeApplication {
 
