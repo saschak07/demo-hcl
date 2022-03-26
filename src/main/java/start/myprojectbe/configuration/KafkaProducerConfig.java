@@ -31,11 +31,10 @@ public class KafkaProducerConfig {
     private String acks;
     @Value("${kafka.retries}")
     private String retries;
-    @Autowired
-    private KafkaProperties kafkaProperties;
 
     @Bean
     public ProducerFactory<String,String> producerFactory(){
+        KafkaProperties kafkaProperties = new KafkaProperties();
         Map<String,Object> configProps = kafkaProperties.buildProducerProperties();
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,bootStrapServer);
         configProps.put(ProducerConfig.CLIENT_ID_CONFIG,clientId);
@@ -50,6 +49,7 @@ public class KafkaProducerConfig {
     public KafkaTemplate<String,String> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
+
 
 
 }
